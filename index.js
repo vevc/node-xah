@@ -2,14 +2,14 @@ const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
 
-const DOMAIN = "YOUR_DOMAIN";
-const PORT = 10008;
-const UUID = "YOUR_UUID";
+const DOMAIN = "node-xah-hopelee8964348-qehpf89w.leapcell.dev";
+const PORT = process.env.PORT || 8080;
+const UUID = "1f68008d-4978-44e9-b788-b572f5f78087";
 const SHORT_ID = "YOUR_SHORT_ID";
 const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-let ARGO_DOMAIN = "YOUR_ARGO_DOMAIN";
-const ARGO_TOKEN = "";
-const REMARKS_PREFIX = "YOUR_REMARKS_PREFIX";
+let ARGO_DOMAIN = "leapcell.c.6.8.b.0.d.0.0.1.0.a.2.ip6.arpa";
+const ARGO_TOKEN = "eyJhIjoiMjY5MTA5YzVhNDQ5NDY3NzE2NmRmZThmMDY0YjZhYzciLCJ0IjoiOGU5NmYzNDQtYTI1My00ZTNmLTkzYjgtZTNhOTY2YmZjZmFkIiwicyI6Ik5HRmlPR1ZrTWpRdE56VTRZaTAwTmpoaUxUazNNVEl0WW1ObU1qUmpaVGxrWVRneiJ9";
+const REMARKS_PREFIX = "leapcell";
 
 // Binary and config definitions
 const apps = [
@@ -46,7 +46,7 @@ function printSubInfo() {
     `============================================================
 🚀 WebSocket+Argo & Reality & HY2 Node Info
 ------------------------------------------------------------
-${subInfo.join('\n')}
+${subInfo。join('\n')}
 ============================================================`);
 }
 
@@ -72,7 +72,7 @@ function runProcess(app) {
         const tunnelUrl = matches[matches.length - 1];
         ARGO_DOMAIN = new URL(tunnelUrl).hostname;
         subInfo[0] = `vless://${UUID}@${ARGO_DOMAIN}:443?encryption=none&security=tls&sni=${ARGO_DOMAIN}&fp=chrome&type=ws&path=%2F%3Fed%3D2560#${REMARKS_PREFIX}-ws-argo`;
-        fs.writeFile(path.join(__dirname, "node.txt"), subInfo.join('\n'), () => { });
+        fs.writeFile(path。join(__dirname， "node.txt")， subInfo.join('\n'), () => { });
         printSubInfo();
       }
     };
